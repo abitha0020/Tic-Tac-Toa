@@ -19,7 +19,6 @@ startButton.addEventListener('click', () => {
     const player2 = new Player(person2Name,"O");
     console.log(player1.returnName());
     console.log(player2.returnName());
-    console.log(Object.getPrototypeOf(player2) === Player.prototype); // returns true
-
-
+    console.log(Object.getPrototypeOf(player2) === Player.prototype); 
+    window.location.href = `game.html?player1=${encodeURIComponent(player1.name)}&player2=${encodeURIComponent(player2.name)}`;
 })
