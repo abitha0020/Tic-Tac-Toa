@@ -1,24 +1,13 @@
 const person1Input=document.getElementById("Person1");
 const person2Input=document.getElementById("Person2");
 const startButton=document.getElementById("Startgame");
-function Player(name, marker){
-    this.name=name;
-    this.marker=marker; 
-}
-Player.prototype.returnName = function() {
-    return (this.name);
-};  
+ 
 startButton.addEventListener('click', () => {
     const person1Name=person1Input.value.trim();
     const person2Name=person2Input.value.trim();
     if (person1Name === '' || person2Name === '') {
         alert('Please enter both names.');
-        return;
+     return;
     }
-    const player1 = new Player(person1Name,"X");
-    const player2 = new Player(person2Name,"O");
-    console.log(player1.returnName());
-    console.log(player2.returnName());
-    console.log(Object.getPrototypeOf(player2) === Player.prototype); 
-    window.location.href = `game.html?player1=${encodeURIComponent(player1.name)}&player2=${encodeURIComponent(player2.name)}`;
+    window.location.href = `game.html?player1=${encodeURIComponent(person1Name)}&player2=${encodeURIComponent(person2Name)}`;
 })
