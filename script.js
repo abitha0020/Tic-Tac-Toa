@@ -10,9 +10,11 @@ const { person1, person2 } = getQueryParams();
 const playerNamesElement = document.getElementById('playerNames');
 playerNamesElement.textContent = `Player 1: ${person1} (X), Player 2: ${person2} (O)`;
 
-function Player(name, marker){
-    this.name=name;
-    this.marker=marker; 
+class Player{
+    constructor(name, marker){
+        this.name=name;
+        this.marker=marker; 
+}
 }
 Player.prototype.returnName = function() {
     return (this.name);
