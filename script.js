@@ -68,7 +68,7 @@ const handleCellClick = (e) => {
     }
 };
 
-const checkWin = () => {
+function checkWin() {
     return winningConditions.some(condition => {
         return condition.every(index => {
             return board[index] === currentPlayer.marker;
@@ -86,4 +86,4 @@ const restartGame = () => {
 
 cells.forEach(cell => cell.addEventListener('click', handleCellClick));
 restartButton.addEventListener('click', restartGame);
-statusElement.innerText = `Player ${currentPlayer.name}'s turn`;
+statusElement.innerHTML = `Player ${currentPlayer.name}'s turn`;
